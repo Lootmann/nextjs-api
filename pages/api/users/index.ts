@@ -4,18 +4,15 @@ import usersDB from "../../../tests/db";
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   switch (req.method) {
     case "GET": {
-      res.status(200).json(usersDB);
-      break;
+      return res.status(200).json(usersDB);
     }
 
     case "POST": {
-      res.status(302).json({ msg: "Posted :^)" });
-      break;
+      return res.status(302).json({ msg: "Posted :^)" });
     }
 
     default: {
-      res.status(405).json({ msg: "wat ?" });
-      break;
+      return res.status(405).json({ msg: "wat ?" });
     }
   }
 };
